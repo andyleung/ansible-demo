@@ -29,7 +29,6 @@
        user: "{{ junos_user }}"
        passwd: "{{ junos_password }}"
        cli: "show chassis hardware"
-       savedir=/tmp
        logfile: cli.log
        dest: "{{ inventory_hostname }}.xml"
        format: xml
