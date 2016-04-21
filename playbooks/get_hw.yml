@@ -8,15 +8,15 @@
 
   tasks:
   - name: Checking NETCONF connectivity
-    wait_for: host={{ inventory_hostname }} port=830 timeout=5
+    wait_for: host={{ ansible_ssh_host }} port=830 timeout=5
 
   - name: Execute CLI
     junos_cli:
-       host: "{{ inventory_hostname }}"
+       host: "{{ ansible_ssh_host }}"
        user: "{{ junos_user }}"
        passwd: "{{ junos_password }}"
        cli: "show chassis hardware"
        logfile: cli.log
-       dest: "{{ inventory_hostname }}.xml"
+       dest: "{{ ansible_ssh_host }}.xml"
        format: xml
 
