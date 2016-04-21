@@ -1,5 +1,6 @@
 ---
 - name: Get Device Facts
+  hosts: vsrx2
   roles:
   - Juniper.junos
   connection: local
